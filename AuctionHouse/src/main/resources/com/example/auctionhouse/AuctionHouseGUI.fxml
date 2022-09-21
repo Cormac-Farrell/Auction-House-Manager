@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="447.0" prefWidth="772.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.auctionhouse.Controller">
+   <children>
+      <TabPane prefHeight="447.0" prefWidth="772.0" style="-fx-border-color: #63030d; -fx-border-width: 5; -fx-background-color: #63030d;" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Add an Auction Lot">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: #b4bcbf; -fx-border-width: 5;">
+                     <children>
+                        <ListView fx:id="Lotlist" layoutX="386.0" layoutY="38.0" prefHeight="210.0" prefWidth="361.0" />
+                        <GridPane layoutX="14.0" layoutY="47.0" prefHeight="192.0" prefWidth="343.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="167.5" minWidth="10.0" prefWidth="120.5" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="255.0" minWidth="10.0" prefWidth="222.5" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label text="Name of Item:" />
+                              <Label text="Description:" GridPane.rowIndex="2" />
+                              <Label text="Type:" GridPane.rowIndex="1" />
+                              <Label text="Date of Origin:" GridPane.rowIndex="3" />
+                              <Label GridPane.rowIndex="4" />
+                              <Label prefHeight="17.0" prefWidth="120.0" text="Date of Sale:" GridPane.rowIndex="5" />
+                              <Label text="Asking Price:" GridPane.rowIndex="4" />
+                              <TextField fx:id="ItemName" GridPane.columnIndex="1" />
+                              <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <TextField fx:id="ItemDescription" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <TextField fx:id="StartingPrice" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                              <ChoiceBox fx:id="SelectType" prefHeight="25.0" prefWidth="224.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <DatePicker fx:id="DateofOrigin" prefHeight="25.0" prefWidth="226.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <DatePicker fx:id="DateofSale" prefHeight="25.0" prefWidth="229.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                              <TextField fx:id="TimeofSale" prefHeight="25.0" prefWidth="50.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                              <Label text="Time of Sale:" GridPane.rowIndex="6" />
+                           </children>
+                        </GridPane>
+                        <Label alignment="TOP_LEFT" layoutX="14.0" layoutY="13.0" style="-fx-background-color: #63030d;" text="Please input Item Description:" textFill="WHITE" underline="true" />
+                        <Label layoutX="386.0" layoutY="13.0" prefWidth="68.0" style="-fx-background-color: #63030d;" text="Current Lots:" textFill="WHITE" />
+                        <Button fx:id="AddItem" layoutX="67.0" layoutY="269.0" mnemonicParsing="false" onMouseClicked="#addItem" style="-fx-background-color: #4beb2f;" text="Add Item" />
+                        <Button fx:id="RemoveItem" layoutX="172.0" layoutY="269.0" mnemonicParsing="false" onMouseClicked="#RemoveItem" style="-fx-background-color: #cc381b;" text="Remove Item" />
+                        <Button fx:id="ClearallItems" layoutX="290.0" layoutY="269.0" mnemonicParsing="false" onMouseClicked="#ClearItems" style="-fx-background-color: #223659;" text="Clear All" textFill="#fff7f7" />
+                        <Button fx:id="EditItem" layoutX="381.0" layoutY="269.0" mnemonicParsing="false" onMouseClicked="#EditItem" style="-fx-background-color: #0078a8;" text="Edit" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Bidder Registation">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #b4bcbf;">
+                     <children>
+                        <ListView fx:id="bidderlist" layoutX="386.0" layoutY="14.0" prefHeight="200.0" prefWidth="369.0" />
+                        <GridPane layoutX="14.0" layoutY="24.0" prefHeight="149.0" prefWidth="331.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="161.5" minWidth="10.0" prefWidth="88.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="243.0" minWidth="10.0" prefWidth="243.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label text="Name:" />
+                              <Label text="Address:" GridPane.rowIndex="1" />
+                              <Label text="Phone Number:" GridPane.rowIndex="2" />
+                              <Label text="Email Address:" GridPane.rowIndex="3" />
+                              <TextField fx:id="bidderName" GridPane.columnIndex="1" />
+                              <TextField fx:id="bidderAddress" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <TextField fx:id="bidderphone" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <TextField fx:id="bidderemail" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                           </children>
+                        </GridPane>
+                        <Button fx:id="addBidder" layoutX="22.0" layoutY="202.0" mnemonicParsing="false" onMouseClicked="#addBidder" style="-fx-background-color: #4beb2f;" text="Add Bidder" />
+                        <Button fx:id="removeBidder" layoutX="119.0" layoutY="202.0" mnemonicParsing="false" onMouseClicked="#RemoveBidder" style="-fx-background-color: #cc381b;" text="Remove Bidder" />
+                        <Button fx:id="bidderClearall" layoutX="233.0" layoutY="202.0" mnemonicParsing="false" onMouseClicked="#ClearBidder" style="-fx-background-color: #223659;" text="Clear All" textFill="WHITE" />
+                        <Button fx:id="EditBidder" layoutX="308.0" layoutY="202.0" mnemonicParsing="false" onMouseClicked="#EditBidder" style="-fx-background-color: #0078a8;" text="Edit" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Current Auction">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #b4bcbf;">
+                     <children>
+                        <ListView fx:id="bidlist" layoutX="386.0" layoutY="60.0" prefHeight="200.0" prefWidth="336.0" />
+                        <GridPane layoutX="14.0" layoutY="141.0" prefHeight="156.0" prefWidth="362.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="176.5" minWidth="10.0" prefWidth="168.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="194.0" minWidth="10.0" prefWidth="194.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints maxHeight="33.0" minHeight="0.0" prefHeight="31.5" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label text="Bidder Name:" />
+                              <Label text="Date of Bid:" GridPane.rowIndex="1" />
+                              <Label text="Time of Bid:" GridPane.rowIndex="2" />
+                              <Label text="Amount:" GridPane.rowIndex="3" />
+                              <ChoiceBox fx:id="SelectBidder" prefHeight="25.0" prefWidth="202.0" GridPane.columnIndex="1" />
+                              <DatePicker fx:id="DateofBid" prefHeight="25.0" prefWidth="195.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <TextField fx:id="TimeofBid" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <TextField fx:id="BidAmount" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                           </children>
+                        </GridPane>
+                        <Label layoutX="14.0" layoutY="14.0" style="-fx-background-color: #63030d;" text="Please Filll out below" textFill="WHITE" />
+                        <GridPane layoutX="15.0" layoutY="41.0" prefHeight="90.0" prefWidth="360.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="175.5" minWidth="10.0" prefWidth="164.5" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="195.5" minWidth="10.0" prefWidth="195.5" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label text="Please select an item to bid on:" />
+                              <Button fx:id="Canceltem" mnemonicParsing="false" onMouseClicked="#CancelItem" style="-fx-background-color: #cc381b;" text="Cancel" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <Button fx:id="SelectItemButton" mnemonicParsing="false" onMouseClicked="#DisplatItemUpdate" style="-fx-background-color: #4beb2f;" text="Select" GridPane.rowIndex="1" />
+                              <ChoiceBox fx:id="SelectItemBox" prefHeight="25.0" prefWidth="210.0" GridPane.columnIndex="1" />
+                           </children>
+                        </GridPane>
+                        <Label layoutX="471.0" layoutY="14.0" />
+                        <Label layoutX="386.0" layoutY="41.0" style="-fx-background-color: #63030d;" text="Bids:" textFill="WHITE" />
+                        <Button layoutX="144.0" layoutY="319.0" mnemonicParsing="false" onMouseClicked="#addBid" style="-fx-background-color: #4beb2f;" text="Place bid" />
+                        <Button layoutX="259.0" layoutY="319.0" mnemonicParsing="false" onMouseClicked="#RemoveBid" style="-fx-background-color: #cc381b;" text="Remove bid" />
+                        <Button fx:id="clearallbids" layoutX="390.0" layoutY="319.0" mnemonicParsing="false" onMouseClicked="#ClearBid" style="-fx-background-color: #223659;" text="Clear All Bids" textFill="WHITE" />
+                        <Button fx:id="SellItem" layoutX="528.0" layoutY="285.0" mnemonicParsing="false" onMouseClicked="#SellItem" style="-fx-background-color: #4beb2f;" text="Sell Item" />
+                        <Button fx:id="EditBid" layoutX="70.0" layoutY="319.0" mnemonicParsing="false" onMouseClicked="#EditBid" style="-fx-background-color: #0078a8;" text="Edit" />
+                        <Label layoutX="385.0" layoutY="14.0" style="-fx-background-color: #63030d;" text="Current Item:" textFill="WHITE" />
+                        <Label layoutX="475.0" layoutY="14.0" />
+                        <Label fx:id="DisplayItem" layoutX="455.0" layoutY="14.0" prefHeight="17.0" prefWidth="141.0" text="Please select an Item" />
+                        <ImageView fitHeight="62.0" fitWidth="134.0" layoutX="605.0" layoutY="267.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@Images/gavel-icon-hammer-icon-judge-vector-30678680-removebg-preview.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Sold Items">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #b4bcbf;">
+                     <children>
+                        <ListView fx:id="SoldItemView" layoutX="14.0" layoutY="69.0" prefHeight="244.0" prefWidth="731.0" />
+                        <Button layoutX="354.0" layoutY="334.0" mnemonicParsing="false" onMouseClicked="#RemoveSoldItem" text="Remove Record" />
+                        <Label layoutX="14.0" layoutY="23.0" prefHeight="38.0" prefWidth="91.0" style="-fx-background-color: #63030d;" text="Sale Records" textFill="WHITE" />
+                     </children></AnchorPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
